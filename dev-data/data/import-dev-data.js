@@ -26,7 +26,7 @@ const importData = async () => {
     await User.create(users);
     await Review.create(reviews);
   } catch (err) {
-    console.log('ERROR:', err);
+    console.error('ERROR:', err);
   }
 
   process.exit();
@@ -38,8 +38,6 @@ const deleteData = async () => {
     await Tour.deleteMany({});
     await User.deleteMany({});
     await Review.deleteMany({});
-
-    console.log('All data documents deleted!');
   } catch (err) {
     console.log(err);
   }
