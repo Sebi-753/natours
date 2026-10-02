@@ -24,14 +24,14 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 //Global middlewares
-app.use(
-  cors({
-    origin: 'http://127.0.0.1:3000',
-    credentials: true,
-  }),
-);
-//serving static files
-// app.use(express.static(`${__dirname}/public`));
+
+//Implement CORS
+app.use(cors());
+
+app.options('*', cors());
+
+// app.use(express.static(`${__dirname}/public`)); //serving static files
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Set security HTTP headers
