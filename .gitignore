@@ -1,0 +1,7 @@
+node_modules/
+.cache/
+*.map
+config.env
+.env
+.env.*
+public/js/bundle.js
